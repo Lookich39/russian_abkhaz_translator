@@ -36,7 +36,7 @@
 
 ```bash
 git clone https://github.com/Lookich39/russian_abkhaz_translator.git
-cd ru_ab_mt
+cd russian_abkhaz_translator
 ```
 
 Установите зависимости:
