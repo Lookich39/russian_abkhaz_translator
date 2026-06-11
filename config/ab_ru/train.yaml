@@ -1,0 +1,72 @@
+# Обучение обратной модели: ab → ru
+# Нужна только для генерации синтетических данных,
+# поэтому можно обучать меньше шагов
+
+data:
+    corpus_1:
+        path_src: data/ru_ab/train.ab.sp
+        path_tgt: data/ru_ab/train.ru.sp
+        weight: 1
+    valid:
+        path_src: data/ru_ab/valid.ab.sp
+        path_tgt: data/ru_ab/valid.ru.sp
+
+# Тот же словарь
+src_vocab: data/ru_ab/vocab.src
+tgt_vocab: data/ru_ab/vocab.src
+share_vocab: true
+
+# Архитектура — такая же, как у прямой модели
+encoder_type: transformer
+decoder_type: transformer
+position_encoding: true
+
+enc_layers: 4
+dec_layers: 4
+heads: 4
+
+rnn_size: 256
+hidden_size: 256
+word_vec_size: 256
+src_word_vec_size: 256
+tgt_word_vec_size: 256
+transformer_ff: 1024
+
+dropout: [0.1]
+attention_dropout: [0.1]
+label_smoothing: 0.1
+
+# Оптимизация
+optim: adam
+adam_beta1: 0.9
+adam_beta2: 0.998
+learning_rate: 2.0
+warmup_steps: 4000
+decay_method: noam
+
+# Батчи
+batch_type: tokens
+batch_size: 4096
+valid_batch_size: 2048
+accum_count: [4]
+max_generator_batches: 32
+
+# Обучение — меньше шагов, т.к. это промежуточная модель
+train_steps: 1000
+valid_steps: 2500
+save_checkpoint_steps: 5000
+early_stopping: 5
+early_stopping_criteria: ppl
+
+# GPU
+world_size: 1
+gpu_ranks: [0]
+
+# Сохранение
+save_model: models/ab_ru/ab_ru
+keep_checkpoint: 3
+
+# Логи
+report_every: 500
+log_file: models/ab_ru/train.log
+seed: 42

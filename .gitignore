@@ -1,0 +1,100 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# =========================
+# Virtual env / Conda
+# =========================
+.venv/
+venv/
+env/
+ENV/
+conda-env/
+.env
+
+# Conda
+.conda/
+conda-meta/
+
+# =========================
+# IDE / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+logs/
+tmp/
+temp/
+
+
+# =========================
+# OpenNMT / training artifacts
+# =========================
+*.chkpt
+
+
+# =========================
+# Competition I/O
+# =========================
+input.pickle
+output.json
+*.translated
+*.translated.txt
+
+# =========================
+# Data folders
+# Ignore all generated/raw data, but keep folder structure with .gitkeep
+# =========================
+data/raw/*
+!data/raw/.gitkeep
+
+data/ru_ab/*
+!data/ru_ab/.gitkeep
+
+data/ab_ru/*
+!data/ab_ru/.gitkeep
+
+data/final/*
+!data/final/.gitkeep
+
+# =========================
+# Models folders
+# Ignore all model checkpoints, but keep folder structure with .gitkeep
+# =========================
+models/ab_ru/*
+!models/ab_ru/.gitkeep
+
+models/final/*
+!models/final/.gitkeep
+
+
+# =========================
+# Optional exports
+# =========================
+*.csv.tmp
+*.json.tmp
+*.pickle.tmp

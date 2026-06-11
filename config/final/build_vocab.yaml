@@ -1,0 +1,16 @@
+save_data: data/final/final
+overwrite: true
+
+data:
+    corpus_1:
+        path_src: data/final/train.ru.sp
+        path_tgt: data/final/train.ab.sp
+        weight: 1
+
+src_vocab: data/final/vocab.src
+tgt_vocab: data/final/vocab.src
+
+src_vocab_size: 12000
+tgt_vocab_size: 12000
+
+share_vocab: true

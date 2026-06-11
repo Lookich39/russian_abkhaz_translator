@@ -1,0 +1,20 @@
+# Запуск: onmt_build_vocab -config build_vocab.yaml -n_sample "-1"
+
+# Корпус
+data:
+    corpus_1:
+        path_src: data/ru_ab/train.ab.sp
+        path_tgt: data/ru_ab/train.ru.sp
+
+# Общий словарь (shared) — так как SPM общий
+src_vocab: data/ru_ab/vocab.src
+tgt_vocab: data/ru_ab/vocab.src
+
+save_data: data/ru_ab/ab_ru
+overwrite: true
+
+# Размер словаря — должен совпадать с SPM vocab_size
+src_vocab_size: 12000
+tgt_vocab_size: 12000
+
+share_vocab: true
